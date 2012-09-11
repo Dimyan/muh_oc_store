@@ -1,0 +1,4 @@
+2012-08-09 2:29:19 - PHP Notice:  Undefined variable: result in /home6/flyfisi3/public_html/oc_store/vqmod/vqcache/vq2-catalog_controller_product_compare.php on line 116
+2012-08-09 2:29:19 - PHP Notice:  Undefined variable: result in /home6/flyfisi3/public_html/oc_store/vqmod/vqcache/vq2-catalog_controller_product_compare.php on line 116
+2012-08-09 2:29:57 - PHP Notice:  Undefined variable: result in /home6/flyfisi3/public_html/oc_store/vqmod/vqcache/vq2-catalog_controller_product_compare.php on line 116
+2012-08-09 2:29:57 - PHP Notice:  Undefined variable: result in /home6/flyfisi3/public_html/oc_store/vqmod/vqcache/vq2-catalog_controller_product_compare.php on line 116
