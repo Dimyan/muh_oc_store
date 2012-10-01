@@ -1,5 +1,21 @@
 <?php
 class ControllerCommonSeoPro extends Controller {
+	private $cache_data = null;
+
+	public function __construct($registry) {
+		parent::__construct($registry);
+		$this->cache_data = $this->cache->get('seo_pro');
+		if (!$this->cache_data) {
+			$query = $this->db->query("SELECT LOWER(`keyword`) as 'keyword', `query` FROM " . DB_PREFIX . "url_alias");
+			$this->cache_data = array();
+			foreach ($query->rows as $row) {
+				$this->cache_data['keywords'][$row['keyword']] = $row['query'];
+				$this->cache_data['queries'][$row['query']] = $row['keyword'];
+			}
+			$this->cache->set('seo_pro', $this->cache_data);
+		}
+	}
+
 	public function index() {
 		// Add rewrite to url class
 		if ($this->config->get('config_seo_url')) {
@@ -18,12 +34,16 @@ class ControllerCommonSeoPro extends Controller {
 			list($last_part) = explode('.', array_pop($parts));
 			array_push($parts, $last_part);
 
-			$keyword_in = array_map(array($this->db, 'escape'), $parts);
-			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword IN ('" . implode("', '", $keyword_in) . "')");
+			$rows = array();
+			foreach ($parts as $keyword) {
+				if (isset($this->cache_data['keywords'][$keyword])) {
+					$rows[] = array('keyword' => $keyword, 'query' => $this->cache_data['keywords'][$keyword]);
+				}
+			}
 
-			if ($query->num_rows == sizeof($parts)) {
+			if (count($rows) == sizeof($parts)) {
 				$queries = array();
-				foreach ($query->rows as $row) {
+				foreach ($rows as $row) {
 					$queries[utf8_strtolower($row['keyword'])] = $row['query'];
 				}
 
@@ -37,7 +57,7 @@ class ControllerCommonSeoPro extends Controller {
 						} else {
 							$this->request->get['path'] .= '_' . $url[1];
 						}
-					} else {
+					} elseif (count($url) > 1) {
 						$this->request->get[$url[0]] = $url[1];
 					}
 				}
@@ -57,7 +77,12 @@ class ControllerCommonSeoPro extends Controller {
 				$this->request->get['route'] = 'product/manufacturer/product';
 			} elseif (isset($this->request->get['information_id'])) {
 				$this->request->get['route'] = 'information/information';
+			} else {
+				if (isset($queries[$parts[0]])) {
+					$this->request->get['route'] = $queries[$parts[0]];
+				}
 			}
+
 
 			$this->validate();
 
@@ -151,18 +176,24 @@ class ControllerCommonSeoPro extends Controller {
 			}
 		}
 
-		if (!empty($queries)) {
-			$query_in = array_map(array($this->db, 'escape'), $queries);
-			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` IN ('" . implode("', '", $query_in) . "')");
+		if(empty($queries)) {
+			$queries[] = $route;
+		}
 
-			if ($query->num_rows == count($queries)) {
-				$aliases = array();
-				foreach ($query->rows as $row) {
-					$aliases[$row['query']] = $row['keyword'];
-				}
-				foreach ($queries as $query) {
-					$seo_url .= '/' . rawurlencode($aliases[$query]);
-				}
+		$rows = array();
+		foreach($queries as $query) {
+			if(isset($this->cache_data['queries'][$query])) {
+				$rows[] = array('query' => $query, 'keyword' => $this->cache_data['queries'][$query]);
+			}
+		}
+
+		if(count($rows) == count($queries)) {
+			$aliases = array();
+			foreach($rows as $row) {
+				$aliases[$row['query']] = $row['keyword'];
+			}
+			foreach($queries as $query) {
+				$seo_url .= '/' . rawurlencode($aliases[$query]);
 			}
 		}
 
@@ -181,6 +212,7 @@ class ControllerCommonSeoPro extends Controller {
 		} else {
 			$seo_url .= '/';
 		}
+		$seo_url = trim($seo_url, '//');
 
 		if (count($data)) {
 			$seo_url .= '?' . urldecode(http_build_query($data, '', '&amp;'));
@@ -270,9 +302,9 @@ class ControllerCommonSeoPro extends Controller {
 	private function getQueryString($exclude = array()) {
 		if (!is_array($exclude)) {
 			$exclude = array();
-		}
+			}
 
 		return urldecode(http_build_query(array_diff_key($this->request->get, array_flip($exclude))));
+		}
 	}
-}
 ?>
