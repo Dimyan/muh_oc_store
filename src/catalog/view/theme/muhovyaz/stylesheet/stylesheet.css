@@ -1699,18 +1699,12 @@ a.button:hover, input.button:hover {
 	padding-left: 12px;
 }
 
-/* mod-Dimyan
-#footer .column ul li {
-	margin-bottom: 3px;
-}
-*/
-
 /* mod-Dimyan */
 #footer .column ul li {
     margin-bottom: 3px;
-    color: #38b0e3;
+    color: #38b0e3;  /* mod-Dimyan */
 }
-/* mod-Dimyan */
+
 
 #footer .column a {
 	text-decoration: none;
