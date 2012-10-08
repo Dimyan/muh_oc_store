@@ -23,9 +23,6 @@
   <div class="content">
     <ul>
       <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-      <?php if ($reward) { ?>
-      <li><a href="<?php echo $reward; ?>"><?php echo $text_reward; ?></a></li>
-      <?php } ?>
       <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
     </ul>
   </div>
