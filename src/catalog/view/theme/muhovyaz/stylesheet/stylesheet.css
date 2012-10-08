@@ -3,6 +3,7 @@ html {
 	margin: 0;
 	padding: 0;
 }
+/* mod-Dimyan
 body {
 	background-color: #ffffff;
 	color: #000000;
@@ -10,6 +11,17 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
+*/
+/* mod-Dimyan */
+body {
+    background: url('../image/bg.gif');
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* mod-Dimyan */
 body, td, th, input, textarea, select, a {
 	font-size: 12px;
 }
@@ -80,12 +92,30 @@ label {
 	cursor: pointer;
 }
 /* layout */
+/* mod-Dimyan
 #container {
 	width: 980px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 }
+*/
+/* mod-Dimyan */
+#container {
+    background: #FFFFFF;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -khtml-border-radius: 20px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
+}
+/* mod-Dimyan */
+
 #column-left {
 	float: left;
 	width: 180px;
@@ -1714,11 +1744,24 @@ a.button:hover, input.button:hover {
 	text-decoration: underline;
     color: #38b0e3; /* mod-Dimyan */
 }
+/* mod-Dimyan
 #powered {
 	margin-top: 5px;
 	text-align: right;
 	clear: both;
 }
+*/
+/* mod-Dimyan */
+#powered {
+    margin-top: 5px;
+    text-align: right;
+    clear: both;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+/* mod-Dimyan */
+
 /* banner */
 .banner div {
 	text-align: center;
