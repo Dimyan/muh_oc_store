@@ -70,34 +70,16 @@ DD_belatedPNG.fix('#logo img');
     <?php echo $text_logged; ?>
     <?php } ?>
   </div>
-  <div class="links"><a href="<?php echo $base; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
 </div>
 <?php if ($categories) { ?>
 <div id="menu">
   <ul>
-    <?php foreach ($categories as $category) { ?>
-    <li><?php if ($category['active']) { ?>
-	<a href="<?php echo $category['href']; ?>" class="active"><?php echo $category['name']; ?></a>
-	<?php } else { ?>
-	<a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-	<?php } ?>
-
-      <?php if ($category['children']) { ?>
-      <div>
-        <?php for ($i = 0; $i < count($category['children']);) { ?>
-        <ul>
-          <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-          <?php for (; $i < $j; $i++) { ?>
-          <?php if (isset($category['children'][$i])) { ?>
-          <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
-          <?php } ?>
-          <?php } ?>
-        </ul>
-        <?php } ?>
-      </div>
-      <?php } ?>
-    </li>
-    <?php } ?>
+    <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
+    <li><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a></li>
+    <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+    <li><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a></li>
+    <li><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></li>
+    <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
   </ul>
 </div>
 <?php } ?>
