@@ -7,7 +7,7 @@
   </div>
   <h1><?php echo $heading_title; ?></h1>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-    <h2><?php echo $text_location; ?></h2>
+    <!--<h2><?php echo $text_location; ?></h2>
     <div class="contact-info">
       <div class="content"><div class="left"><b><?php echo $text_address; ?></b><br />
         <?php echo $store; ?><br />
@@ -25,7 +25,7 @@
       </div>
     </div>
     </div>
-    <h2><?php echo $text_contact; ?></h2>
+    <h2><?php echo $text_contact; ?></h2>  -->
     <div class="content">
     <b><?php echo $entry_name; ?></b><br />
     <input type="text" name="name" value="<?php echo $name; ?>" />
