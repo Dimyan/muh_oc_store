@@ -9,4 +9,5 @@ $_['text_logged']         = 'Вы вошли как <a href="%s">%s</a> <b>(</b>
 $_['text_account']        = 'Личный Кабинет';
 $_['text_checkout']       = 'Оформление заказа';
 $_['text_contact']        = 'Контакты';
+$_['text_login']          = 'Войти';
 ?>
