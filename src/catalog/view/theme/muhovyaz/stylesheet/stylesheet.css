@@ -821,6 +821,11 @@ a.button:hover, input.button:hover {
     margin-bottom: 4px;
     text-align: center;
 }
+/* mod-Dimyan */
+.box-product .name a:hover {
+    color: #999;
+}
+/* mod-Dimyan */
 .box-product .price {
     display: block;
     font-weight: bold;
@@ -863,6 +868,11 @@ a.button:hover, input.button:hover {
 	text-decoration: none;
 	color: #333;
 }
+/* mod-Dimyan */
+.box-category > ul > li > a:hover {
+    color: #999;
+}
+/* mod-Dimyan */
 .box-category > ul > li ul {
 	display: none;
 }
