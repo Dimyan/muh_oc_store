@@ -362,7 +362,7 @@ label {
 	border-left: 1px solid #CCC;
 }
 /* menu */
-/* mod-Dimyan
+
 #menu {
 	background: #585858;
 	border-bottom: 1px solid #000000;
@@ -377,47 +377,26 @@ label {
 	box-shadow: 0px 2px 2px #DDDDDD;
 	padding: 0px 5px;
 }
-*/
-/* mod-Dimyan */
-#menu {
-    background: #000;
-    height: 37px;
-    margin-bottom: 15px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -khtml-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-    padding: 0px 5px;
-}
-/* mod-Dimyan */
 
 #menu ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-/* mod-Dimyan
+
 #menu > ul > li {
 	position: relative;
 	float: left;
 	z-index: 20;	
 	padding: 6px 5px 5px 0px;
 }
-*/
-/* mod-Dimyan */
-#menu > ul > li {
-    position: relative;
-    float: left;
-    z-index: 20;
-}
-/* mod-Dimyan */
 
 #menu > ul > li:hover {
 }
 #menu > ul > li > a.active {
 	background: #000;
 }
-/* mod-Dimyan
+
 #menu > ul > li > a {
 	font-size: 13px;
 	color: #FFF;
@@ -436,25 +415,7 @@ label {
 	-khtml-border-radius: 5px;
 	border-radius: 5px;
 }
-*/
 
-/* mod-Dimyan */
-#menu > ul > li > a {
-    font-size: 13px;
-    color: #FFF;
-    line-height: 25px;
-    text-decoration: none;
-    display: block;
-    padding: 6px 10px 6px 10px;
-    margin-bottom: 5px;
-    z-index: 6;
-    position: relative;
-}
-#menu > ul > li:hover > a {
-    background: #e7e7e7;
-    color: #000;
-}
-/* mod-Dimyan */
 
 #menu > ul > li > div {
 	display: none;
