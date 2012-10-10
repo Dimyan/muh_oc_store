@@ -78,6 +78,7 @@ class ControllerInformationContact extends Controller {
 		}	
 
     	$this->data['button_continue'] = $this->language->get('button_continue');
+        $this->data['button_send'] = $this->language->get('button_send');
     
 		$this->data['action'] = $this->url->link('information/contact');
 		$this->data['store'] = $this->config->get('config_name');

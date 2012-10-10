@@ -57,7 +57,7 @@
     <?php } ?>
     </div>
     <div class="buttons">
-      <div class="right"><input type="submit" value="<?php echo $button_continue; ?>" class="button" /></div>
+      <div class="right"><input type="submit" value="<?php echo $button_send; ?>" class="button" /></div>
     </div>
   </form>
   <?php echo $content_bottom; ?></div>
