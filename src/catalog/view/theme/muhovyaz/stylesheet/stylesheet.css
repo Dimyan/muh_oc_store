@@ -343,6 +343,7 @@ label {
     right: 0px;
     width: 298px;
     z-index: 15;
+    float: left;
 }
 
 #menu .button-search {
