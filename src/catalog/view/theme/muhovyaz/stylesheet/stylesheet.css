@@ -144,7 +144,7 @@ label {
 }
 #header #logo {
 	position: absolute;
-	top: 25px;
+	top: 15px;
 	left: 15px;
 }
 #language {
@@ -384,9 +384,7 @@ label {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
-    right: 0;
-    border:0;
+    float: right;
 }
 
 #menu > ul > li {
@@ -394,13 +392,6 @@ label {
 	float: left;
 	z-index: 20;	
 	padding: 6px 5px 5px 0px;
-
-    border:0;
-    margin:0;
-    padding:0;
-    font-size:10px;
-    list-style:none;
-    display: inline;
 }
 
 #menu > ul > li:hover {
@@ -419,9 +410,6 @@ label {
 	margin-bottom: 5px;
 	z-index: 6;
 	position: relative;
-
-    border:solid 1px #DDDDDD;
-    margin-right:2px;
 }
 
 #menu > ul > li:hover > a {

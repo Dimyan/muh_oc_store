@@ -55,14 +55,14 @@ DD_belatedPNG.fix('#logo img');
   <?php echo $language; ?>
   <?php echo $currency; ?>
   <?php echo $cart; ?>
-  <div id="search">
+ <!-- <div id="search">
     <div class="button-search"></div>
     <?php if ($filter_name) { ?>
     <input type="text" name="filter_name" value="<?php echo $filter_name; ?>" />
     <?php } else { ?>
     <input type="text" name="filter_name" value="<?php echo $text_search; ?>" onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
     <?php } ?>
-  </div>
+  </div>  -->
   <div id="welcome">
     <?php if (!$logged) { ?>
     <?php echo $text_welcome; ?>
@@ -73,6 +73,14 @@ DD_belatedPNG.fix('#logo img');
 </div>
 <?php if ($categories) { ?>
 <div id="menu">
+    <div id="search">
+        <div class="button-search"></div>
+        <?php if ($filter_name) { ?>
+        <input type="text" name="filter_name" value="<?php echo $filter_name; ?>" />
+        <?php } else { ?>
+        <input type="text" name="filter_name" value="<?php echo $text_search; ?>" onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
+        <?php } ?>
+    </div>
   <ul>
     <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
     <!--<li><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a></li>-->
