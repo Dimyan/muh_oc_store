@@ -338,11 +338,11 @@ label {
 
 
 #menu #search {
-    position: absolute;
+  /*  position: absolute;
     top: 15px;
     right: 0px;
     width: 298px;
-    z-index: 15;
+    z-index: 15;  */
     float: left;
 }
 
