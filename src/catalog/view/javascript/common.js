@@ -12,7 +12,7 @@ $(document).ready(function() {
 		location = url;
 	});
 	
-	$('#header input[name=\'filter_name\']').bind('keydown', function(e) {
+	$('#menu input[name=\'filter_name\']').bind('keydown', function(e) {
 		if (e.keyCode == 13) {
 			url = $('base').attr('href') + 'index.php?route=product/search';
 			 
