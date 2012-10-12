@@ -303,7 +303,7 @@ label {
 	padding-top: 50px;
 	text-align: center;
 }
-#header #search {
+/*#header #search {
 	position: absolute;
 	top: 15px;
 	right: 0px;
@@ -333,8 +333,7 @@ label {
 	-webkit-box-shadow: 0px 2px 0px #F0F0F0;
 	-moz-box-shadow: 0px 2px 0px #F0F0F0;
 	box-shadow: 0px 2px 0px #F0F0F0;	
-}
-
+}*/
 #header #welcome {
 	position: absolute;
 	top: 47px;
@@ -488,7 +487,7 @@ label {
     border-radius: 3px 3px 3px 3px;
     -webkit-box-shadow: 0px 2px 0px #F0F0F0;
     -moz-box-shadow: 0px 2px 0px #F0F0F0;
-    box-shadow: 0px 2px 0px #F0F0F0;
+    /*box-shadow: 0px 2px 0px #F0F0F0;*/
 }
 
 .breadcrumb {
