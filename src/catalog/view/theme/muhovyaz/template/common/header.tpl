@@ -54,7 +54,7 @@ DD_belatedPNG.fix('#logo img');
   <?php } ?>
   <?php echo $language; ?>
   <?php echo $currency; ?>
-  <?php echo $cart; ?>
+
   <!--<div id="search">
     <div class="button-search"></div>
     <?php if ($filter_name) { ?>
@@ -70,6 +70,7 @@ DD_belatedPNG.fix('#logo img');
     <?php echo $text_logged; ?>
     <?php } ?>
   </div>
+  <?php echo $cart; ?>
 </div>
 <?php if ($categories) { ?>
 <div id="menu">
