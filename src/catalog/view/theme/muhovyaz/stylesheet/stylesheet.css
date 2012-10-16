@@ -182,8 +182,8 @@ label {
 }
 #header #cart {
 	position: absolute;
-	top: 45px;
-	right: 8px;
+	top: 42px;
+	right: 2px;
 	z-index: 9;
 	min-width: 300px;
     float: right;
@@ -196,7 +196,7 @@ label {
 	padding-right: 14px;
 	border-top: 1px solid #FFFFFF;
 	border-left: 1px solid #FFFFFF;
-	border-right: 1px solid #EEEEEE;
+	border-right: 1px solid #FFFFFF;
 	background: #FFF;
 	position: relative;
 	z-index: 1;
@@ -340,13 +340,13 @@ label {
 	top: 47px;
 	right: 0px;   */
     position: relative;
-    top: 8px;
+    top: 15px;
 	z-index: 5;
 	width: 298px;
 	text-align: right;
 	color: #999999;
     float: right;
-    right: 8px;
+    right: 15px;
 }
 #header .links {
 	position: absolute;
