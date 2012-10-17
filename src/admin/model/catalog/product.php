@@ -421,6 +421,11 @@ class ModelCatalogProduct extends Model {
 			} else {
 				$sql .= " ASC";
 			}
+
+      // Additional sort order by product name -- mod Dimyan
+      if(isset($data['sort']) && $data['sort'] != 'pd.name') {
+        $sql .= ", pd.name ASC";
+      }
 		
 			if (isset($data['start']) || isset($data['limit'])) {
 				if ($data['start'] < 0) {
