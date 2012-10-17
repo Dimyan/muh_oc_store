@@ -366,6 +366,10 @@ class ModelCatalogProduct extends Model {
 			if (!empty($data['filter_model'])) {
 				$sql .= " AND LCASE(p.model) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_model'])) . "%'";
 			}
+
+      if (!empty($data['filter_sku'])) {
+        $sql .= " AND LCASE(p.model) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_sku'])) . "%'";
+      }
 			
 			if (!empty($data['filter_price'])) {
 				$sql .= " AND p.price LIKE '" . $this->db->escape($data['filter_price']) . "%'";
@@ -404,6 +408,7 @@ class ModelCatalogProduct extends Model {
 			$sort_data = array(
 				'pd.name',
 				'p.model',
+        'p.sku',
 				'p.price',
 				'p.quantity',
 				'p.status',
@@ -687,6 +692,10 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_model'])) {
 			$sql .= " AND LCASE(p.model) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_model'])) . "%'";
 		}
+
+    if (!empty($data['filter_sku'])) {
+      $sql .= " AND LCASE(p.sku) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_sku'])) . "%'";
+    }
 		
 		if (!empty($data['filter_price'])) {
 			$sql .= " AND p.price LIKE '" . $this->db->escape($data['filter_price']) . "%'";
