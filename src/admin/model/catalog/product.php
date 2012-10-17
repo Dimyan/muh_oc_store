@@ -426,7 +426,7 @@ class ModelCatalogProduct extends Model {
       if(isset($data['sort']) && $data['sort'] != 'pd.name') {
         $sql .= ", pd.name ASC";
       }
-		
+
 			if (isset($data['start']) || isset($data['limit'])) {
 				if ($data['start'] < 0) {
 					$data['start'] = 0;

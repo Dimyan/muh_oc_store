@@ -5,6 +5,12 @@ class ControllerFeedGoogleSitemap extends Controller {
 			$output  = '<?xml version="1.0" encoding="UTF-8"?>';
 			$output .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
+      $output .= '<url>';
+      $output .= '<loc>' . HTTP_SERVER . '</loc>';
+      $output .= '<changefreq>weekly</changefreq>';
+      $output .= '<priority>1.0</priority>';
+      $output .= '</url>';
+
 			$this->load->model('catalog/product');
 
 			$products = $this->model_catalog_product->getProducts();
