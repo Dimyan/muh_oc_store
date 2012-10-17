@@ -251,6 +251,5 @@ $('input[name=\'filter_sku\']').autocomplete({
     return false;
   }
 });
-
 //--></script> 
 <?php echo $footer; ?>
