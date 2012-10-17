@@ -246,10 +246,10 @@ $('input[name=\'filter_sku\']').autocomplete({
 		$('input[name=\'filter_sku\']').val(ui.item.label);
 
 		return false;
-	}
+	},
   focus: function(event, ui) {
     return false;
   }
 });
-//--></script> 
+//--></script>
 <?php echo $footer; ?>
