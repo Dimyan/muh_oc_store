@@ -23,7 +23,7 @@ CKEDITOR.editorConfig = function( config )
 	config.htmlEncodeOutput = false;
 	config.entities = false;
 	
-	config.toolbar = 'Custom';
+	config.toolbar = 'Full';
 
 	config.toolbar_Custom = [
 		['Source'],

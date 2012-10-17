@@ -183,7 +183,7 @@ label {
 #header #cart {
 	position: absolute;
 	top: 42px;
-	right: 2px;
+    right: 2px;
 	z-index: 9;
 	min-width: 300px;
     float: right;
