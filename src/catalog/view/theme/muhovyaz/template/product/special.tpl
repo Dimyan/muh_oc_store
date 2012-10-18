@@ -32,7 +32,6 @@
       </select>
     </div>
   </div>
-  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
   <div class="product-list">
     <?php foreach ($products as $product) { ?>
     <div>
