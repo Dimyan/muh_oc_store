@@ -1335,7 +1335,7 @@ class ControllerCatalogProduct extends Controller {
 				$filter_name = '';
 			}
 
-      if (isset($this->request->get['filter_category_id'])) {
+      /*if (isset($this->request->get['filter_category_id'])) {
         $filter_category_id = $this->request->get['filter_category_id'];
       } else {
         $filter_category_id = null;
@@ -1351,7 +1351,7 @@ class ControllerCatalogProduct extends Controller {
       }
       if (isset($this->request->get['filter_category_id'])) {
         $url .= '&filter_category_id=' . $this->request->get['filter_category_id'] . '&filter_sub_category=true';
-      }
+      }     */
 			
 			if (isset($this->request->get['filter_model'])) {
 				$filter_model = $this->request->get['filter_model'];
