@@ -1827,3 +1827,51 @@ a.button:hover, input.button:hover {
 .banner div img {
 	margin-bottom: 20px;
 }
+
+/* information */
+.info {
+    margin-bottom: 20px;
+}
+.info .info-heading {
+    -webkit-border-radius: 7px 7px 0px 0px;
+    -moz-border-radius: 7px 7px 0px 0px;
+    -khtml-border-radius: 7px 7px 0px 0px;
+    border-radius: 7px 7px 0px 0px;
+    border: 1px solid #0d9cd8;
+    background: url('../image/info.png') repeat-x;
+    padding: 8px 10px 7px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    text-align: center;
+}
+.info .info-content {
+    background: #FFFFFF;
+    -webkit-border-radius: 0px 0px 7px 7px;
+    -moz-border-radius: 0px 0px 7px 7px;
+    -khtml-border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 7px 7px;
+    border-left: 1px solid #0d9cd8;
+    border-right: 1px solid #0d9cd8;
+    border-bottom: 1px solid #0d9cd8;
+    padding: 10px;
+}
+.info .info-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.info .info-content li {
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #0d6288;
+}
+.info .info-content a {
+    text-decoration: none;
+    color: #0d9cd8;
+}
+.info .info-content a:hover {
+    text-decoration: none;
+    color: #0d6288;
+}
