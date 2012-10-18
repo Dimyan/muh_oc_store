@@ -32,7 +32,21 @@
                 <a href="<?php echo $sort_model; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_model; ?></a>
                 <?php } else { ?>
                 <a href="<?php echo $sort_model; ?>"><?php echo $column_model; ?></a>
-                <?php } ?></td>
+                <?php } ?>
+              </td>
+              <td class="left"><?php if ($sort == 'p.category') { ?>
+                <a href="<?php echo $sort_category; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_category; ?></a>
+                <?php } else { ?>
+                <a href="<?php echo $sort_category; ?>"><?php echo $column_category; ?></a>
+                <?php } ?>
+              </td>
+              <td class="left"><?php if ($sort == 'p.manufacturer') { ?>
+                <a href="<?php echo $sort_manufacturer; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_manufacturer; ?></a>
+                <?php } else { ?>
+                <a href="<?php echo $sort_manufacturer; ?>"><?php echo $column_manufacturer; ?></a>
+                <?php } ?>
+              </td>
+
               <td class="left"><?php if ($sort == 'p.sku') { ?>
                   <a href="<?php echo $sort_sku; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_sku; ?></a>
                   <?php } else { ?>
@@ -62,6 +76,36 @@
               <td></td>
               <td><input type="text" name="filter_name" value="<?php echo $filter_name; ?>" /></td>
               <td><input type="text" name="filter_model" value="<?php echo $filter_model; ?>" /></td>
+              <td><select name="filter_category" style="width: 170px;" onchange="filter();">
+                <option value="0"></option>
+                <?php $cat_selected = ''; ?>
+                  <?php if ($categories && count( $categories ) ) {
+                  foreach( $categories as $cat ){ ?>
+                    <?php if (!is_null($filter_category_id) && $filter_category_id && ( $filter_category_id == $cat['category_id'] ) ) { ?>
+                    <?php $cat_selected = $cat['name']; ?><option selected="selected" value="<?php echo $cat['category_id']; ?>"><?php echo $cat['name']; ?></option>
+                    <?php }else{ ?>
+                    <option value="<?php echo $cat['category_id']; ?>"><?php echo $cat['name']; ?></option>
+                    <?php }?>
+                    <?php }
+                  } ?>
+                </select>
+                </td>
+                <td><select name="filter_manufacturer" style="width: 90px;" onchange="filter();">
+                    <option value="0"></option>
+                    <?php $man_selected = ''; ?>
+                    <?php if ($manufacturers && count( $manufacturers ) ) {
+                  foreach( $manufacturers as $man ){ ?>
+                    <?php if (!is_null($filter_manufacturer) && $filter_manufacturer && ( $filter_manufacturer == $man['manufacturer_id'] ) ) { ?>
+                    <?php $man_selected = $man['manufacturer_id']; ?><option selected="selected" value="<?php echo $man['manufacturer_id']; ?>"><?php echo $man['name']; ?></option>
+                    <?php }else{ ?>
+                    <option value="<?php echo $man['manufacturer_id']; ?>"><?php echo $man['name']; ?></option>
+                    <?php }?>
+                    <?php }
+                  } ?>
+                </select>
+                </td>
+
+
               <td><input type="text" name="filter_sku" value="<?php echo $filter_sku; ?>" /></td>
               <td align="left"><input type="text" name="filter_price" value="<?php echo $filter_price; ?>" size="8"/></td>
               <td align="right"><input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" style="text-align: right;" /></td>
@@ -91,7 +135,15 @@
               <td class="center"><img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" style="padding: 1px; border: 1px solid #DDDDDD;" /></td>
               <td class="left"><?php echo $product['name']; ?></td>
               <td class="left"><?php echo $product['model']; ?></td>
-              <td class="left"><?php echo $product['sku']; ?></td>
+
+              <td class="left">
+                <?php if( $product['category'] ){ foreach( $product['category'] as $category ){ echo $category['name'] . "<br/>"; } } ?>
+              </td>
+              <td class="left">
+                <?php echo $product['manufacturer']; ?>
+              </td>
+
+                <td class="left"><?php echo $product['sku']; ?></td>
               <td class="left"><?php if ($product['special']) { ?>
                 <span style="text-decoration: line-through;"><?php echo $product['price']; ?></span><br/>
                 <span style="color: #b00;"><?php echo $product['special']; ?></span>
@@ -138,6 +190,15 @@ function filter() {
 	if (filter_model) {
 		url += '&filter_model=' + encodeURIComponent(filter_model);
 	}
+
+  var filter_category = $('select[name=\'filter_category\']').val();
+  var filter_manufacturer = $('select[name=\'filter_manufacturer\']').val();
+  if (filter_manufacturer && parseInt( filter_manufacturer, 10 ) > 0 ) {
+      url += '&filter_manufacturer=' + encodeURIComponent(filter_manufacturer);
+  }
+  if (filter_category && parseInt( filter_category, 10 ) > 0 ) {
+      url += '&filter_category_id=' + encodeURIComponent(filter_category) + '&filter_sub_category=true';
+  }
 
   var filter_sku = $('input[name=\'filter_sku\']').attr('value');
 

@@ -351,8 +351,10 @@ class ModelCatalogProduct extends Model {
 	
 	public function getProducts($data = array()) {
 		if ($data) {
-			$sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
-			
+			//$sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+
+      $sql = "SELECT p.*, pd.*, m.name as manufacturer FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "manufacturer m ON ( p.manufacturer_id = m.manufacturer_id )";
+
 			if (!empty($data['filter_category_id'])) {
 				$sql .= " LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id)";			
 			}
@@ -402,6 +404,10 @@ class ModelCatalogProduct extends Model {
 					$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
 				}
 			}
+
+      if (isset($data['filter_manufacturer']) && !is_null($data['filter_manufacturer'])) {
+        $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer'] . "'";
+      }
 			
 			$sql .= " GROUP BY p.product_id";
 						
@@ -627,6 +633,22 @@ class ModelCatalogProduct extends Model {
 		
 		return $product_layout_data;
 	}
+
+  public function getProductCategoriesInfo($product_id) {
+    $product_category_data = array();
+
+    $query = $this->db->query("SELECT c.*, cd.name FROM " . DB_PREFIX . "product_to_category c INNER JOIN " . DB_PREFIX . "category_description cd ON c.category_id = cd.category_id WHERE product_id = '" . (int)$product_id . "'");
+
+    foreach ($query->rows as $result) {
+      $path = $this->model_catalog_category->getPath( $result['category_id'] );
+      $product_category_data[] = array(
+        'id' => $result['category_id'],
+        'name' => $result['name'],
+        'path' => $path
+      );
+    }
+    return $product_category_data;
+  }
 		
 	public function getProductCategories($product_id) {
 		$product_category_data = array();

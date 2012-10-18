@@ -18,6 +18,8 @@ $_['text_amount']            = 'Фиксированная сумма';
 // Column
 $_['column_name']            = 'Название товара';
 $_['column_model']           = 'Модель';
+$_['column_category']        = 'Категория';
+$_['column_manufacturer']    = 'Производитель';
 $_['column_image']           = 'Изображения';
 $_['column_price']           = 'Цена на сайте';
 $_['column_quantity']        = 'Количество';
