@@ -370,7 +370,7 @@ class ModelCatalogProduct extends Model {
 			}
 
       if (!empty($data['filter_sku'])) {
-        $sql .= " AND LCASE(p.model) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_sku'])) . "%'";
+        $sql .= " AND LCASE(p.sku) LIKE '" . $this->db->escape(utf8_strtolower($data['filter_sku'])) . "%'";
       }
 			
 			if (!empty($data['filter_price'])) {

@@ -165,7 +165,7 @@
             <?php } ?>
             <?php } else { ?>
             <tr>
-              <td class="center" colspan="9"><?php echo $text_no_results; ?></td>
+              <td class="center" colspan="11"><?php echo $text_no_results; ?></td>
             </tr>
             <?php } ?>
           </tbody>
