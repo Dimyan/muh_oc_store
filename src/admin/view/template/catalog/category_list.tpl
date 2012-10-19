@@ -23,6 +23,7 @@
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
               <td class="left"><?php echo $column_name; ?></td>
+              <td class="left"><?php echo $column_seo_keyword; ?></td>
               <td class="right"><?php echo $column_sort_order; ?></td>
               <td class="right"><?php echo $column_action; ?></td>
             </tr>
@@ -41,6 +42,7 @@
               <?php } else { ?>
                 <td class="left"><?php echo $category['indent']; ?><?php echo $category['name']; ?></td>
               <?php } ?>
+              <td class="left"><?php echo $category['keyword']; ?></td>
               <td class="right"><?php echo $category['sort_order']; ?></td>
               <td class="right"><?php foreach ($category['action'] as $action) { ?>
                 [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]
@@ -49,7 +51,7 @@
             <?php } ?>
             <?php } else { ?>
             <tr>
-              <td class="center" colspan="4"><?php echo $text_no_results; ?></td>
+              <td class="center" colspan="5"><?php echo $text_no_results; ?></td>
             </tr>
             <?php } ?>
           </tbody>

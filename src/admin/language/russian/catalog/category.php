@@ -16,6 +16,7 @@ $_['column_action']          = 'Действие';
 
 // Entry
 $_['entry_name']             = 'Название категории:';
+$_['column_seo_keyword']     = 'SEO URL';
 $_['entry_meta_keyword']     = 'Мета-тег Keywords:';
 $_['entry_meta_description'] = 'Мета-тег Description:';
 $_['entry_description']      = 'Описание:';

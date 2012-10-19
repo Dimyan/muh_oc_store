@@ -108,6 +108,7 @@ class ControllerCatalogCategory extends Controller {
 		$this->data['text_no_results'] = $this->language->get('text_no_results');
 
 		$this->data['column_name'] = $this->language->get('column_name');
+    $this->data['column_seo_keyword'] = $this->language->get('column_seo_keyword');
 		$this->data['column_sort_order'] = $this->language->get('column_sort_order');
 		$this->data['column_action'] = $this->language->get('column_action');
 
@@ -414,6 +415,7 @@ class ControllerCatalogCategory extends Controller {
 			$output[$result['category_id']] = array(
 				'category_id' => $result['category_id'],
 				'name'        => $name,
+        'keyword'     => $result['keyword'],
 				'sort_order'  => $result['sort_order'],
 				'selected'    => $selected,
 				'action'      => $action,
