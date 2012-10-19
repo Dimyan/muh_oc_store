@@ -222,7 +222,7 @@
     </div>
   </div>
   <div id="tabs" class="htabs"><a href="#tab-description"><?php echo $tab_description; ?></a>
-    <?php if ($attribute_groups) { ?>
+    <?php if ($attribute_groups || strcmp('', $weight . $length . $width . $height)) { ?>
     <a href="#tab-attribute"><?php echo $tab_attribute; ?></a>
     <?php } ?>
     <?php if ($review_status) { ?>
@@ -233,9 +233,24 @@
     <?php } ?>
   </div>
   <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
-  <?php if ($attribute_groups) { ?>
+  <?php if ($attribute_groups || strcmp('', $weight . $length . $width . $height)) { ?>
   <div id="tab-attribute" class="tab-content">
     <table class="attribute">
+       <thead>
+         <tr>
+           <td colspan="2"><?php echo $text_weight_and_dim; ?></td>
+         </tr>
+       </thead>
+       <tbody>
+       <tr>
+         <td><?php echo $text_weight; ?></td>
+         <td><?php echo $weight; ?></td>
+       </tr>
+       <tr>
+         <td><?php echo $text_dimension; ?></td>
+         <td><?php echo $length; if(!empty($length)) echo " x "; echo $width; if(!empty($width)) echo " x "; echo $height; ?></td>
+       </tr>
+       </tbody>
       <?php foreach ($attribute_groups as $attribute_group) { ?>
       <thead>
         <tr>

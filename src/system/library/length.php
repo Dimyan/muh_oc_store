@@ -5,6 +5,7 @@ class Length {
 	public function __construct($registry) {
 		$this->db = $registry->get('db');
 		$this->config = $registry->get('config');
+    $this->language = $registry->get('language');
 
 		$length_class_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "length_class mc LEFT JOIN " . DB_PREFIX . "length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
     
@@ -39,10 +40,13 @@ class Length {
   	}
 
 	public function format($value, $length_class_id, $decimal_point = '.', $thousand_point = ',') {
+    if( 0 == $value ) return "";
 		if (isset($this->lengths[$length_class_id])) {
-    		return number_format($value, 2, $decimal_point, $thousand_point) . $this->lengths[$length_class_id]['unit'];
+    	//return number_format($value, 2, $decimal_point, $thousand_point) . $this->lengths[$length_class_id]['unit'];
+      return number_format($value, (int)$this->language->get('length_decimals'), $decimal_point, $thousand_point) . $this->lengths[$length_class_id]['unit'];
 		} else {
-			return number_format($value, 2, $decimal_point, $thousand_point);
+			//return number_format($value, 2, $decimal_point, $thousand_point);
+      return number_format($value, (int)$this->language->get('weight_decimals'), $decimal_point, $thousand_point);
 		}
 	}
 	

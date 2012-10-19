@@ -7,6 +7,8 @@ $_['date_format_long']        = 'l, d F Y';
 $_['time_format']             = 'H:i:s';
 $_['decimal_point']           = ',';
 $_['thousand_point']          = '';
+$_['length_decimals']         = 0;
+$_['weight_decimals']         = 0;
 
 // Text
 $_['text_yes']                = 'Да';

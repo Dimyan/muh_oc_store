@@ -26,6 +26,9 @@ $_['text_upload']       = 'Your file was successfully uploaded!';
 $_['text_wait']         = 'Please Wait!';
 $_['text_tags']         = 'Tags:';
 $_['text_error']        = 'Product not found!';
+$_['text_weight']       = 'Weight';
+$_['text_weight_and_dim'] = 'Weight and dimension';
+
 
 // Entry
 $_['entry_name']        = 'Your Name:';
