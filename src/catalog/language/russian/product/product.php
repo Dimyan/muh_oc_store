@@ -28,6 +28,7 @@ $_['text_tags']         = 'Метки:';
 $_['text_error']        = 'Товар не найден!';
 $_['text_weight']       = 'Вес';
 $_['text_weight_and_dim'] = 'Вес и размеры';
+$_['text_dimension']    = 'Размеры (Д х Ш х В)';
 
 // Entry
 $_['entry_name']        = 'Ваше Имя:';
