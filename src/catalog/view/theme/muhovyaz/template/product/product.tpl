@@ -233,7 +233,7 @@
     <?php } ?>
   </div>
   <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
-  <?php if ($attribute_groups || strcmp('0.00', $weight)) { ?>
+  <?php if ($attribute_groups || strcmp('', $weight . $length . $width . $height)) { ?>
   <div id="tab-attribute" class="tab-content">
     <table class="attribute">
        <thead>
