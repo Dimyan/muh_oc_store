@@ -998,6 +998,7 @@ a.button:hover, input.button:hover {
 .product-filter {
 	border-bottom: 1px solid #EEEEEE;
 	padding-bottom: 5px;
+    margin-bottom: 15px;
 	overflow: auto;
 }
 .product-filter .display {

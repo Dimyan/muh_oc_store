@@ -139,12 +139,15 @@ class ControllerProductCategory extends Controller {
 				);
 							
 				$product_total = $this->model_catalog_product->getTotalProducts($data);
-				
+
+        $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
+
 				$this->data['categories'][] = array(
 					'name'  => $result['name'] . ' (' . $product_total . ')',
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
-				);
-			}
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url),
+          'thumb' => $image
+        );
+      }
 			
 			$this->data['products'] = array();
 			
