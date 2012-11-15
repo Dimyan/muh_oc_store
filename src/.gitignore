@@ -5,3 +5,6 @@
 /.idea
 .project
 .DS_Store
+/system/cache/cache*
+/vqmod/vqcache/*
+/image/cache/*
