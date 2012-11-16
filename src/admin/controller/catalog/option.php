@@ -53,8 +53,11 @@ class ControllerCatalogOption extends Controller {
 		
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_option->editOption($this->request->get['option_id'], $this->request->post);
-			
-			$this->session->data['success'] = $this->language->get('text_success');
+
+      $this->load->model('catalog/option_model_sku');
+      $this->model_catalog_option_model_sku->editOptionModelSku($this->request->get['option_id'], $this->request->post);
+
+      $this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
 			
@@ -285,6 +288,8 @@ class ControllerCatalogOption extends Controller {
 		$this->data['entry_value'] = $this->language->get('entry_value');
 		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
+    $this->data['entry_model'] = $this->language->get('entry_model');
+    $this->data['entry_sku']   = $this->language->get('entry_sku');
 
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
