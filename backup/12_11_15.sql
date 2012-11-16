@@ -1241,6 +1241,8 @@ CREATE TABLE `option_value` (
   `option_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
+  `model` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `sku` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1251,7 +1253,7 @@ CREATE TABLE `option_value` (
 
 LOCK TABLES `option_value` WRITE;
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
-INSERT INTO `option_value` VALUES (43,1,'',3),(32,1,'',1),(45,2,'',4),(44,2,'',3),(42,5,'',4),(41,5,'',3),(39,5,'',1),(40,5,'',2),(31,1,'',2),(23,2,'',1),(24,2,'',2),(46,11,'',1),(47,11,'',2),(48,11,'',3),(50,13,'no_image.jpg',16),(49,13,'no_image.jpg',18),(51,13,'no_image.jpg',14),(52,13,'no_image.jpg',12),(53,13,'no_image.jpg',10),(54,13,'no_image.jpg',8),(55,13,'',7),(56,13,'',6),(57,13,'',5),(58,13,'',4),(59,13,'',3),(60,13,'',2);
+INSERT INTO `option_value` VALUES (43,1,'',3,'',''),(32,1,'',1,'',''),(45,2,'',4,'',''),(44,2,'',3,'',''),(42,5,'',4,'',''),(41,5,'',3,'',''),(39,5,'',1,'',''),(40,5,'',2,'',''),(31,1,'',2,'',''),(23,2,'',1,'',''),(24,2,'',2,'',''),(46,11,'',1,'',''),(47,11,'',2,'',''),(48,11,'',3,'',''),(50,13,'no_image.jpg',16,'',''),(49,13,'no_image.jpg',18,'',''),(51,13,'no_image.jpg',14,'',''),(52,13,'no_image.jpg',12,'',''),(53,13,'no_image.jpg',10,'',''),(54,13,'no_image.jpg',8,'',''),(55,13,'',7,'',''),(56,13,'',6,'',''),(57,13,'',5,'',''),(58,13,'',4,'',''),(59,13,'',3,'',''),(60,13,'',2,'','');
 /*!40000 ALTER TABLE `option_value` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1531,6 +1533,8 @@ CREATE TABLE `order_option` (
   `name` varchar(255) NOT NULL,
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL,
+  `model` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `sku` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`order_option_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -2811,4 +2815,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-15 12:01:16
+-- Dump completed on 2012-11-16 16:58:40
