@@ -137,10 +137,14 @@ class ControllerProductCategory extends Controller {
 					'filter_category_id'  => $result['category_id'],
 					'filter_sub_category' => true	
 				);
+
+        if ($result['image']) {
+          $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+        } else {
+          $image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+        }
 							
 				$product_total = $this->model_catalog_product->getTotalProducts($data);
-
-        $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
 
 				$this->data['categories'][] = array(
 					'name'  => $result['name'] . ' (' . $product_total . ')',

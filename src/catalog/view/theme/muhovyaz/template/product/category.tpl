@@ -7,20 +7,14 @@
   </div>
   <h1><?php echo $heading_title; ?></h1>
   <?php if ($categories) { ?>
-  <!--<div class="box">-->
-      <div class="box-content">
-          <div class="box-product box-subcat">
-              <?php foreach ($categories as $category) { ?>
-              <div>
-                  <?php if ($category['thumb']) { ?>
-                  <div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>
-                  <?php } ?>
-                  <div class="name subcatname"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></div>
-              </div>
-              <?php } ?>
-          </div>
-      </div>
-  <!--</div>-->
+    <div class="box-product">
+        <?php foreach ($categories as $category) { ?>
+        <div>
+            <div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" title="<?php echo $category['name']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>
+            <div class="name"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></div>
+        </div>
+        <?php } ?>
+    </div>
   <?php } ?>
   <?php if ($thumb || $description) { ?>
     <div class="category-info">
