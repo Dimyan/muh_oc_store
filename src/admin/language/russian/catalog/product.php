@@ -35,6 +35,7 @@ $_['entry_store']            = 'Магазины:';
 $_['entry_keyword']          = 'SEO URL:<br/><span class="help">Должно быть уникальным на всю систему.</span>';
 $_['entry_model']            = 'Модель:';
 $_['entry_sku']              = 'Артикул (SKU, код производителя):';
+$_['entry_sku_s']            = 'Артикул:';
 $_['entry_upc']              = 'UPC:';
 $_['entry_location']         = 'Расположение:';
 $_['entry_manufacturer']     = 'Производитель:';
@@ -74,6 +75,7 @@ $_['entry_layout']           = 'Изменить схему:';
 $_['entry_main_category']    = 'Категория:';
 $_['entry_seo_title']        = 'HTML-тег Title:';
 $_['entry_seo_h1']           = 'HTML-тег H1:';
+
 
 // Error
 $_['error_warning']          = 'Внимательно проверьте форму на ошибки!';

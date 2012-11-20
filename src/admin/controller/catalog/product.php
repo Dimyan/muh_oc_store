@@ -680,6 +680,8 @@ class ControllerCatalogProduct extends Controller {
     	$this->data['entry_shipping'] = $this->language->get('entry_shipping');
     	$this->data['entry_date_available'] = $this->language->get('entry_date_available');
     	$this->data['entry_quantity'] = $this->language->get('entry_quantity');
+      $this->data['entry_model'] = $this->language->get('entry_model');
+      $this->data['entry_sku_s'] = $this->language->get('entry_sku_s');
 		$this->data['entry_stock_status'] = $this->language->get('entry_stock_status');
     	$this->data['entry_price'] = $this->language->get('entry_price');
 		$this->data['entry_tax_class'] = $this->language->get('entry_tax_class');
@@ -1117,7 +1119,9 @@ class ControllerCatalogProduct extends Controller {
 						'points'                  => $product_option_value['points'],
 						'points_prefix'           => $product_option_value['points_prefix'],						
 						'weight'                  => $product_option_value['weight'],
-						'weight_prefix'           => $product_option_value['weight_prefix']	
+						'weight_prefix'           => $product_option_value['weight_prefix'],
+            'model'                   => $product_option_value['model'],
+            'sku'                     => $product_option_value['sku']
 					);						
 				}
 				

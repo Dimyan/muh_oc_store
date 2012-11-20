@@ -426,6 +426,8 @@
                 <tr>
                   <td class="left"><?php echo $entry_option_value; ?></td>
                   <td class="right"><?php echo $entry_quantity; ?></td>
+                  <td class="right"><?php echo $entry_model; ?></td>
+                  <td class="right"><?php echo $entry_sku_s; ?></td>
                   <td class="left"><?php echo $entry_subtract; ?></td>
                   <td class="right"><?php echo $entry_price; ?></td>
                   <td class="right"><?php echo $entry_option_points; ?></td>
@@ -449,6 +451,8 @@
                     </select>
                     <input type="hidden" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][product_option_value_id]" value="<?php echo $product_option_value['product_option_value_id']; ?>" /></td>
                   <td class="right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" size="3" /></td>
+                  <td class="right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][model]" value="<?php echo $product_option_value['model']; ?>" /></td>
+                  <td class="right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][sku]" value="<?php echo $product_option_value['sku']; ?>" /></td>
                   <td class="left"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][subtract]">
                       <?php if ($product_option_value['subtract']) { ?>
                       <option value="1" selected="selected"><?php echo $text_yes; ?></option>
@@ -504,7 +508,7 @@
               <?php } ?>
               <tfoot>
                 <tr>
-                  <td colspan="6"></td>
+                  <td colspan="8"></td>
                   <td class="left"><a onclick="addOptionValue('<?php echo $option_row; ?>');" class="button"><?php echo $button_add_option_value; ?></a></td>
                 </tr>
               </tfoot>
