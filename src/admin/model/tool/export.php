@@ -883,6 +883,8 @@ class ModelToolExport extends Model {
 			}
 			if (($type=='select') || ($type=='checkbox') || ($type=='radio') || ($type=='image')) {
 				$quantity = $option['quantity'];
+        $model = $option['model'];
+        $sku = $option['sku'];
 				$subtract = $option['subtract'];
 				$subtract = ((strtoupper($subtract)=="TRUE") || (strtoupper($subtract)=="YES") || (strtoupper($subtract)=="ENABLED")) ? 1 : 0;
 				$price = $option['price'];
@@ -897,8 +899,8 @@ class ModelToolExport extends Model {
 				$optionId = $optionIds[$name][$type];
 				$optionValueId = $optionValueIds[$name][$type][$value];
 				$productOptionId = $productOptionIds[$productId][$optionId];
-				$sql  = "INSERT INTO `".DB_PREFIX."product_option_value` (`product_option_value_id`,`product_option_id`,`product_id`,`option_id`,`option_value_id`,`quantity`,`subtract`,`price`,`price_prefix`,`points`,`points_prefix`,`weight`,`weight_prefix`) VALUES ";
-				$sql .= "($productOptionValueId,$productOptionId,$productId,$optionId,$optionValueId,$quantity,$subtract,$price,'$pricePrefix',$points,'$pointsPrefix',$weight,'$weightPrefix');";
+				$sql  = "INSERT INTO `".DB_PREFIX."product_option_value` (`product_option_value_id`,`product_option_id`,`product_id`,`option_id`,`option_value_id`,`quantity`,`subtract`,`price`,`price_prefix`,`points`,`points_prefix`,`weight`,`weight_prefix`, `model`,`sku`) VALUES ";
+				$sql .= "($productOptionValueId,$productOptionId,$productId,$optionId,$optionValueId,$quantity,$subtract,$price,'$pricePrefix',$points,'$pointsPrefix',$weight,'$weightPrefix', '$model', '$sku');";
 				$database->query( $sql );
 			}
 		}
@@ -938,6 +940,8 @@ class ModelToolExport extends Model {
 			$image = $this->getCell($data,$i,$j++,'');
 			$required = $this->getCell($data,$i,$j++,'true');
 			$quantity = $this->getCell($data,$i,$j++,'0');
+      $model = $this->getCell($data,$i,$j++,'');
+      $sku = $this->getCell($data,$i,$j++,'');
 			$subtract = $this->getCell($data,$i,$j++,'false');
 			$price = $this->getCell($data,$i,$j++,'0');
 			$pricePrefix = $this->getCell($data,$i,$j++,'+');
@@ -956,6 +960,8 @@ class ModelToolExport extends Model {
 			$options[$i]['required'] = $required;
 			if (($type=='select') || ($type=='checkbox') || ($type=='radio') || ($type=='image')) {
 				$options[$i]['quantity'] = $quantity;
+        $options[$i]['model'] = $model;
+        $options[$i]['sku'] = $sku;
 				$options[$i]['subtract'] = $subtract;
 				$options[$i]['price'] = $price;
 				$options[$i]['price_prefix'] = $pricePrefix;
@@ -2190,6 +2196,8 @@ class ModelToolExport extends Model {
 		$query .= "  po.required,";
 		$query .= "  pov.option_value_id,";
 		$query .= "  pov.quantity,";
+    $query .= "  pov.model,";
+    $query .= "  pov.sku,";
 		$query .= "  pov.subtract,";
 		$query .= "  pov.price,";
 		$query .= "  pov.price_prefix,";
@@ -2220,6 +2228,8 @@ class ModelToolExport extends Model {
 			$worksheet->writeString( $i, $j++, $row['image'] );
 			$worksheet->write( $i, $j++, ($row['required']==0) ? "false" : "true", $textFormat );
 			$worksheet->write( $i, $j++, $row['quantity'] );
+      $worksheet->write( $i, $j++, $row['model'] );
+      $worksheet->write( $i, $j++, $row['sku'] );
 			if (is_null($row['option_value_id'])) {
 				$subtract = '';
 			} else {
