@@ -642,7 +642,7 @@ class ModelSaleOrder extends Model {
 			}
 		}
 
-      	if ($data['notify']) {
+    if ($data['notify']) {
 			$language = new Language($order_info['language_directory']);
 			$language->load($order_info['language_filename']);
 			$language->load('mail/order');
@@ -658,15 +658,15 @@ class ModelSaleOrder extends Model {
 				$message .= $language->get('text_order_status') . "\n";
 				$message .= $order_status_query->row['name'] . "\n\n";
 			}
+
+      if ($data['comment']) {
+        $message .= $language->get('text_comment') . "\n\n";
+        $message .= strip_tags(html_entity_decode($data['comment'], ENT_QUOTES, 'UTF-8')) . "\n\n";
+      }
 			
 			if ($order_info['customer_id']) {
 				$message .= $language->get('text_link') . "\n";
 				$message .= html_entity_decode($order_info['store_url'] . 'index.php?route=account/order/info&order_id=' . $order_id, ENT_QUOTES, 'UTF-8') . "\n\n";
-			}
-			
-			if ($data['comment']) {
-				$message .= $language->get('text_comment') . "\n\n";
-				$message .= strip_tags(html_entity_decode($data['comment'], ENT_QUOTES, 'UTF-8')) . "\n\n";
 			}
 
 			$message .= $language->get('text_footer');

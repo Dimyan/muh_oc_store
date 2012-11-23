@@ -217,7 +217,7 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 			
 			$product_data = array();
-		
+
 			foreach ($this->cart->getProducts() as $product) {
 				$option_data = array();
 	
@@ -235,7 +235,9 @@ class ControllerCheckoutConfirm extends Controller {
 						'option_value_id'         => $option['option_value_id'],								   
 						'name'                    => $option['name'],
 						'value'                   => $value,
-						'type'                    => $option['type']
+						'type'                    => $option['type'],
+            'model'                   => $option['model'],
+            'sku'                     => $option['sku']
 					);					
 				}
 	 
@@ -348,7 +350,9 @@ class ControllerCheckoutConfirm extends Controller {
 										
 					$option_data[] = array(
 						'name'  => $option['name'],
-						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) ,
+            'model' => $option['model'],
+            'sku' 	=> $option['sku']
 					);
 				}  
 	 

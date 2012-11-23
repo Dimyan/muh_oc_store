@@ -276,14 +276,16 @@
                   <input type="hidden" name="order_product[<?php echo $product_row; ?>][product_id]" value="<?php echo $order_product['product_id']; ?>" />
                   <input type="hidden" name="order_product[<?php echo $product_row; ?>][name]" value="<?php echo $order_product['name']; ?>" />
                   <?php foreach ($order_product['option'] as $option) { ?>
-                  - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][order_option_id]" value="<?php echo $option['order_option_id']; ?>" />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][product_option_id]" value="<?php echo $option['product_option_id']; ?>" />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][product_option_value_id]" value="<?php echo $option['product_option_value_id']; ?>" />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][name]" value="<?php echo $option['name']; ?>" />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][value]" value="<?php echo $option['value']; ?>" />
-                  <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][type]" value="<?php echo $option['type']; ?>" />
-                  <?php $option_row++; ?>
+                    - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
+                    - <small>(<?php echo $text_option_model; ?>: <?php echo $option['model']; ?>)</small><br />
+                    - <small>(<?php echo $text_option_sku; ?>: <?php echo $option['sku']; ?>)</small><br />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][order_option_id]" value="<?php echo $option['order_option_id']; ?>" />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][product_option_id]" value="<?php echo $option['product_option_id']; ?>" />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][product_option_value_id]" value="<?php echo $option['product_option_value_id']; ?>" />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][name]" value="<?php echo $option['name']; ?>" />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][value]" value="<?php echo $option['value']; ?>" />
+                    <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_option][<?php echo $option_row; ?>][type]" value="<?php echo $option['type']; ?>" />
+                    <?php $option_row++; ?>
                   <?php } ?>
                   <?php foreach ($order_product['download'] as $download) { ?>
                   <input type="hidden" name="order_product[<?php echo $product_row; ?>][order_download][<?php echo $download_row; ?>][order_download_id]" value="<?php echo $download['order_download_id']; ?>" />
@@ -449,7 +451,9 @@
               <tr>
                 <td class="left"><?php echo $order_product['name']; ?><br />
                   <?php foreach ($order_product['option'] as $option) { ?>
-                  - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
+                    - <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
+                    - <small>(<?php echo $text_option_model; ?>: <?php echo $option['model']; ?>)</small><br />
+                    - <small>(<?php echo $text_option_sku; ?>: <?php echo $option['sku']; ?>)</small><br />
                   <?php } ?></td>
                 <td class="left"><?php echo $order_product['model']; ?></td>
                 <td class="right"><?php echo $order_product['quantity']; ?></td>

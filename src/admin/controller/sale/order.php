@@ -482,7 +482,7 @@ class ControllerSaleOrder extends Controller {
 		$this->response->setOutput($this->render());
   	}
 
-  	public function getForm() {
+  public function getForm() {
 		$this->load->model('sale/customer');
 				
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -495,6 +495,8 @@ class ControllerSaleOrder extends Controller {
 		$this->data['text_product'] = $this->language->get('text_product');
 		$this->data['text_voucher'] = $this->language->get('text_voucher');
 		$this->data['text_order'] = $this->language->get('text_order');
+    $this->data['text_option_model'] = $this->language->get('text_option_model');
+    $this->data['text_option_sku'] = $this->language->get('text_option_sku');
 		
 		$this->data['entry_store'] = $this->language->get('entry_store');
 		$this->data['entry_customer'] = $this->language->get('entry_customer');
@@ -1100,9 +1102,9 @@ class ControllerSaleOrder extends Controller {
 		
 		$this->document->addScript('view/javascript/jquery/ajaxupload.js');
 		
-		$this->data['order_products'] = array();		
-		
-		foreach ($order_products as $order_product) {
+		$this->data['order_products'] = array();
+
+    foreach ($order_products as $order_product) {
 			if (isset($order_product['order_option'])) {
 				$order_option = $order_product['order_option'];
 			} elseif (isset($this->request->get['order_id'])) {
@@ -1447,6 +1449,8 @@ class ControllerSaleOrder extends Controller {
 			$this->data['text_queries_remaining'] = $this->language->get('text_queries_remaining');
 			$this->data['text_maxmind_id'] = $this->language->get('text_maxmind_id');
 			$this->data['text_error'] = $this->language->get('text_error');
+      $this->data['text_option_model'] = $this->language->get('text_option_model');
+      $this->data['text_option_sku'] = $this->language->get('text_option_sku');
 							
 			$this->data['column_product'] = $this->language->get('column_product');
 			$this->data['column_model'] = $this->language->get('column_model');
@@ -1641,14 +1645,17 @@ class ControllerSaleOrder extends Controller {
 			foreach ($products as $product) {
 				$option_data = array();
 
-				$options = $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']);
+        $options = $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']);
 
 				foreach ($options as $option) {
 					if ($option['type'] != 'file') {
 						$option_data[] = array(
 							'name'  => $option['name'],
 							'value' => $option['value'],
-							'type'  => $option['type']
+							'type'  => $option['type'],
+              'model' => $option['model'],
+              'sku'   => $option['sku']
+
 						);
 					} else {
 						$option_data[] = array(
@@ -2358,6 +2365,8 @@ class ControllerSaleOrder extends Controller {
 		$this->data['column_price'] = $this->language->get('column_price');
 		$this->data['column_total'] = $this->language->get('column_total');
 		$this->data['column_comment'] = $this->language->get('column_comment');
+    $this->data['text_option_model'] = $this->language->get('text_option_model');
+    $this->data['text_option_sku'] = $this->language->get('text_option_sku');
 
 		$this->load->model('sale/order');
 
@@ -2483,7 +2492,9 @@ class ControllerSaleOrder extends Controller {
 						
 						$option_data[] = array(
 							'name'  => $option['name'],
-							'value' => $value
+							'value' => $value,
+              'model'	=> $option['model'],
+              'sku'		=> $option['sku']
 						);								
 					}
 

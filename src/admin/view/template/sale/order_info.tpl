@@ -302,9 +302,11 @@
                 <?php foreach ($product['option'] as $option) { ?>
                 <br />
                 <?php if ($option['type'] != 'file') { ?>
-                &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+                  &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small><br />
+                  <?php if ($option['model'] != '') { ?>&nbsp;<small> - <?php echo $text_option_model; ?>: <?php echo $option['model']; ?></small><br /><?php } ?>
+                  <?php if ($option['sku'] != '') { ?>&nbsp;<small> - <?php echo $text_option_sku; ?>: <?php echo $option['sku']; ?></small><?php } ?>
                 <?php } else { ?>
-                &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
+                  &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
                 <?php } ?>
                 <?php } ?></td>
               <td class="left"><?php echo $product['model']; ?></td>

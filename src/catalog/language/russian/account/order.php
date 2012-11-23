@@ -22,6 +22,8 @@ $_['text_history']          = 'История заказов';
 $_['text_success']          = 'Товары из заказа #%s успешно добавлены в Вашу корзину!';
 $_['text_empty']            = 'Вы еще не совершали покупок!';
 $_['text_error']            = 'Запрошенный заказ не найден!';
+$_['text_option_model']     = 'Option Model: %s';
+$_['text_option_sku']       = 'Option SKU: %s';
 
 // Column
 $_['column_name']           = 'Наименование товара';

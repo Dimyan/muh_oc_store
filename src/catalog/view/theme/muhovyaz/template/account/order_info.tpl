@@ -31,7 +31,7 @@
   <table class="list">
     <thead>
       <tr>
-        <td class="left"><?php echo $text_payment_address; ?></td>
+        <!--<td class="left"><?php echo $text_payment_address; ?></td>-->
         <?php if ($shipping_address) { ?>
         <td class="left"><?php echo $text_shipping_address; ?></td>
         <?php } ?>
@@ -39,7 +39,7 @@
     </thead>
     <tbody>
       <tr>
-        <td class="left"><?php echo $payment_address; ?></td>
+        <!--<td class="left"><?php echo $payment_address; ?></td>-->
         <?php if ($shipping_address) { ?>
         <td class="left"><?php echo $shipping_address; ?></td>
         <?php } ?>

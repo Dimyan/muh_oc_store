@@ -11,7 +11,15 @@ class ModelCheckoutOrder extends Model {
 			$order_product_id = $this->db->getLastId();
 
 			foreach ($product['option'] as $option) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "order_option SET order_id = '" . (int)$order_id . "', order_product_id = '" . (int)$order_product_id . "', product_option_id = '" . (int)$option['product_option_id'] . "', product_option_value_id = '" . (int)$option['product_option_value_id'] . "', name = '" . $this->db->escape($option['name']) . "', `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_option SET order_id = '" . (int)$order_id .
+          "', order_product_id = '" . (int)$order_product_id .
+          "', product_option_id = '" . (int)$option['product_option_id'] .
+          "', product_option_value_id = '" . (int)$option['product_option_value_id'] .
+          "', name = '" . $this->db->escape($option['name']) .
+          "', `value` = '" . $this->db->escape($option['value']) .
+          "', `type` = '" . $this->db->escape($option['type']) .
+          "', `model` = '" . $this->db->escape($option['model']) .
+          "', `sku` = '" . $this->db->escape($option['sku']) ."'");
 			}
 				
 			foreach ($product['download'] as $download) {
@@ -281,6 +289,8 @@ class ModelCheckoutOrder extends Model {
 			$template->data['text_total'] = $language->get('text_new_total');
 			$template->data['text_footer'] = $language->get('text_new_footer');
 			$template->data['text_powered'] = $language->get('text_new_powered');
+      $template->data['text_option_model'] = $language->get('text_option_model');
+      $template->data['text_option_sku'] = $language->get('text_option_sku');
 			
 			$template->data['logo'] = HTTP_IMAGE . 'data/logo-mail.jpg';		
 			$template->data['store_name'] = $order_info['store_name'];
@@ -393,7 +403,9 @@ class ModelCheckoutOrder extends Model {
 					
 						$option_data[] = array(
 							'name'  => $option['name'],
-						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+						  'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+              'model' => $option['model'],
+			        'sku'	=> $option['sku']
 						);
 				}
 			  
@@ -446,6 +458,8 @@ class ModelCheckoutOrder extends Model {
 				
 				foreach ($order_option_query->rows as $option) {
 					$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($option['value']) > 20 ? utf8_substr($option['value'], 0, 20) . '..' : $option['value']) . "\n";
+          $text .= $this->language->get('text_option_model') . ': ' . $option['model'] . "\n";
+          $text .= $this->language->get('text_option_sku') . ': ' . $option['sku'] . "\n";
 				}
 			}
 			
@@ -501,18 +515,22 @@ class ModelCheckoutOrder extends Model {
 				$subject = sprintf($language->get('text_new_subject'), html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'), $order_id);
 				
 				// Text оформление письма админу
-			$text  = sprintf($language->get('text_new_received'), html_entity_decode($order_info['store_name'], ENT_QUOTES, 'UTF-8')) . "\n\n";
-			$text .= $language->get('text_new_order_id') . ' ' . $order_id . "\n";
-			$text .= $language->get('text_new_date_added') . ' ' . date($language->get('date_format_short'), strtotime($order_info['date_added'])) . "\n";
-			$text .= $language->get('text_new_order_status') . ' ' . $order_status . "\n\n";
-			$text .= $language->get('text_new_buyer') . ' ' . $order_info['firstname'] . ' ' . $order_info['lastname'] .  "\n";
-			$text .= $language->get('text_new_email') . ' ' . $order_info['email'] . "\n";
-			$text .= $language->get('text_new_telephone') . ' ' . $order_info['telephone'] . "\n";
-			$text .= $language->get('text_new_payment_address') . ' ' . $order_info['payment_address_1'] .  ' '  . $order_info['payment_address_2'] ."\n\n";
-			$text .= $language->get('text_new_products') . "\n";
+			  $text  = sprintf($language->get('text_new_received'), html_entity_decode($order_info['store_name'], ENT_QUOTES, 'UTF-8')) . "\n\n";
+			  $text .= $language->get('text_new_order_id') . ' ' . $order_id . "\n";
+			  $text .= $language->get('text_new_date_added') . ' ' . date($language->get('date_format_short'), strtotime($order_info['date_added'])) . "\n";
+			  $text .= $language->get('text_new_order_status') . ' ' . $order_status . "\n\n";
+			  $text .= $language->get('text_new_buyer') . ' ' . $order_info['firstname'] . ' ' . $order_info['lastname'] .  "\n";
+			  $text .= $language->get('text_new_email') . ' ' . $order_info['email'] . "\n";
+			  $text .= $language->get('text_new_telephone') . ' ' . $order_info['telephone'] . "\n";
+			  //$text .= $language->get('text_new_payment_address') . ' ' . $order_info['payment_address_1'] .  ' '  . $order_info['payment_address_2'] ."\n\n";
+			  $text  .= $language->get('text_new_shipping_address') . "\n"
+          . $order_info['shipping_firstname'] . ' ' . $order_info['shipping_lastname'] . "\n"
+          . $order_info['shipping_postcode'] . ' ' . $order_info['shipping_city'] . ' ' . $order_info['shipping_address_1'];
+
+        $text .= $language->get('text_new_products') . "\n\n";
 				
 				foreach ($order_product_query->rows as $product) {
-					$text .= $product['quantity'] . 'x ' . $product['name'] . ' (' . $product['model'] . ') ' . html_entity_decode($this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']), ENT_NOQUOTES, 'UTF-8') . "\n";
+					$text .= $product['quantity'] . 'x   ' . $product['name'] . ' (' . $product['model'] . ')      ' . html_entity_decode($this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']), ENT_NOQUOTES, 'UTF-8') . "\n";
 					
 					$order_option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "' AND order_product_id = '" . $product['order_product_id'] . "'");
 					
@@ -524,6 +542,8 @@ class ModelCheckoutOrder extends Model {
 						}
 											
 						$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
+            $text .= chr(9) . '-' . $this->language->get('text_option_model') . ': ' . $option['model'] . "\n";
+            $text .= chr(9) . '-' . $this->language->get('text_option_sku') . ': ' . $option['sku'] . "\n";
 					}
 				}
 				
