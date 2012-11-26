@@ -292,13 +292,13 @@ class ControllerAccountOrder extends Controller {
 	  			'firstname' => $order_info['shipping_firstname'],
 	  			'lastname'  => $order_info['shipping_lastname'],
 	  			'company'   => $order_info['shipping_company'],
-      			'address_1' => $order_info['shipping_address_1'],
-      			'address_2' => $order_info['shipping_address_2'],
-      			'city'      => $order_info['shipping_city'],
-      			'postcode'  => $order_info['shipping_postcode'],
-      			'zone'      => $order_info['shipping_zone'],
-				'zone_code' => $order_info['shipping_zone_code'],
-      			'country'   => $order_info['shipping_country']  
+      		'address_1' => $order_info['shipping_address_1'],
+      		'address_2' => $order_info['shipping_address_2'],
+      		'city'      => $order_info['shipping_city'],
+      		'postcode'  => $order_info['shipping_postcode'],
+      		'zone'      => $order_info['shipping_zone'],
+				  'zone_code' => $order_info['shipping_zone_code'],
+      		'country'   => $order_info['shipping_country']
 			);
 
 			$this->data['shipping_address'] = str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format))));
@@ -306,6 +306,8 @@ class ControllerAccountOrder extends Controller {
 			$this->data['shipping_method'] = $order_info['shipping_method'];
 			
 			$this->data['products'] = array();
+
+      $this->load->model('tool/image');
 			
 			$products = $this->model_account_order->getOrderProducts($this->request->get['order_id']);
 
@@ -329,8 +331,15 @@ class ControllerAccountOrder extends Controller {
 					);					
         }
 
+        if (empty($product['image'])) {
+          $thumb = '';
+				} else {
+          $thumb = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
+				}
+
         $this->data['products'][] = array(
           'name'     => $product['name'],
+          'thumb'    => $thumb,
           'model'    => $product['model'],
           'option'   => $option_data,
           'quantity' => $product['quantity'],
