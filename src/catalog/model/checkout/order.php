@@ -479,7 +479,7 @@ class ModelCheckoutOrder extends Model {
 			
 			if ($order_info['customer_id']) {
 				$text .= $language->get('text_new_link') . "\n";
-				$text .= $order_info['store_url'] . 'index.php?route=account/order/info&order_id=' . $order_id . "\n\n";
+				$text .= $order_info['store_url'] . 'index.php?route=account/order/info/order_id=' . $order_id . "\n\n";
 			}
 		
 			if ($order_download_query->num_rows) {

@@ -87,19 +87,19 @@ class ControllerAccountLogin extends Controller {
 
       	$this->data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),       	
+			    'href'      => $this->url->link('common/home'),
         	'separator' => false
       	);
   
       	$this->data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_account'),
-			'href'      => $this->url->link('account/account', '', 'SSL'),
+			    'href'      => $this->url->link('account/account', '', 'SSL'),
         	'separator' => $this->language->get('text_separator')
       	);
 		
       	$this->data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_login'),
-			'href'      => $this->url->link('account/login', '', 'SSL'),      	
+			    'href'      => $this->url->link('account/login', '', 'SSL'),
         	'separator' => $this->language->get('text_separator')
       	);
 				
@@ -108,8 +108,8 @@ class ControllerAccountLogin extends Controller {
     	$this->data['text_new_customer'] = $this->language->get('text_new_customer');
     	$this->data['text_register'] = $this->language->get('text_register');
     	$this->data['text_register_account'] = $this->language->get('text_register_account');
-		$this->data['text_returning_customer'] = $this->language->get('text_returning_customer');
-		$this->data['text_i_am_returning_customer'] = $this->language->get('text_i_am_returning_customer');
+		  $this->data['text_returning_customer'] = $this->language->get('text_returning_customer');
+		  $this->data['text_i_am_returning_customer'] = $this->language->get('text_i_am_returning_customer');
     	$this->data['text_forgotten'] = $this->language->get('text_forgotten');
 
     	$this->data['entry_email'] = $this->language->get('entry_email');
