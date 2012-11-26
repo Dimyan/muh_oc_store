@@ -8,6 +8,7 @@ class ControllerAccountAccount extends Controller {
     	} 
 	
 		$this->language->load('account/account');
+    $this->load->model('account/customer');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -33,31 +34,37 @@ class ControllerAccountAccount extends Controller {
 			$this->data['success'] = '';
 		}
 		
-    	$this->data['heading_title'] = $this->language->get('heading_title');
+    $this->data['heading_title'] = $this->language->get('heading_title');
 
-    	$this->data['text_my_account'] = $this->language->get('text_my_account');
+    $this->data['text_my_account'] = $this->language->get('text_my_account');
 		$this->data['text_my_orders'] = $this->language->get('text_my_orders');
 		$this->data['text_my_newsletter'] = $this->language->get('text_my_newsletter');
-    	$this->data['text_edit'] = $this->language->get('text_edit');
-    	$this->data['text_password'] = $this->language->get('text_password');
-    	$this->data['text_address'] = $this->language->get('text_address');
+    $this->data['text_edit'] = $this->language->get('text_edit');
+    $this->data['text_password'] = $this->language->get('text_password');
+    $this->data['text_address'] = $this->language->get('text_address');
 		$this->data['text_wishlist'] = $this->language->get('text_wishlist');
-    	$this->data['text_order'] = $this->language->get('text_order');
-    	$this->data['text_download'] = $this->language->get('text_download');
+    $this->data['text_order'] = $this->language->get('text_order');
+    $this->data['text_download'] = $this->language->get('text_download');
 		$this->data['text_reward'] = $this->language->get('text_reward');
 		$this->data['text_return'] = $this->language->get('text_return');
 		$this->data['text_transaction'] = $this->language->get('text_transaction');
 		$this->data['text_newsletter'] = $this->language->get('text_newsletter');
 
-    	$this->data['edit'] = $this->url->link('account/edit', '', 'SSL');
-    	$this->data['password'] = $this->url->link('account/password', '', 'SSL');
+    $this->data['edit'] = $this->url->link('account/edit', '', 'SSL');
+    $this->data['password'] = $this->url->link('account/password', '', 'SSL');
 		$this->data['address'] = $this->url->link('account/address', '', 'SSL');
 		$this->data['wishlist'] = $this->url->link('account/wishlist');
-    	$this->data['order'] = $this->url->link('account/order', '', 'SSL');
-    	$this->data['download'] = $this->url->link('account/download', '', 'SSL');
+    $this->data['order'] = $this->url->link('account/order', '', 'SSL');
+    $this->data['download'] = $this->url->link('account/download', '', 'SSL');
 		$this->data['return'] = $this->url->link('account/return', '', 'SSL');
 		$this->data['transaction'] = $this->url->link('account/transaction', '', 'SSL');
 		$this->data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+
+    if ($this->request->server['REQUEST_METHOD'] != 'POST') {
+      $customer_info = $this->model_account_customer->getCustomer($this->customer->getId());
+    }
+
+    $this->data['customer_fio'] = $customer_info['firstname'] . " " . $customer_info['lastname'];
 		
 		if ($this->config->get('reward_status')) {
 			$this->data['reward'] = $this->url->link('account/reward', '', 'SSL');

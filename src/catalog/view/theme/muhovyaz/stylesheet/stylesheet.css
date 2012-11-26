@@ -34,6 +34,15 @@ h1, .welcome {
 	font-weight: normal;
 	text-shadow: 0 0 1px rgba(0, 0, 0, .01);
 }
+h1-title {
+    color: #636E75;
+    font-family: Verdana;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: normal;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .01);
+}
 h2 {
 	color: #000000;
 	font-size: 16px;

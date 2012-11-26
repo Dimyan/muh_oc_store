@@ -12,7 +12,7 @@
       <li><a href="<?php echo $password; ?>"><?php echo $text_password; ?></a></li>
       <?php } ?>
       <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-      <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
+      <!--<li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>-->
       <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
       <?php if ($logged) { ?>
       <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>

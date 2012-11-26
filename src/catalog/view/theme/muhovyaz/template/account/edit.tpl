@@ -35,17 +35,17 @@
             <span class="error"><?php echo $error_email; ?></span>
             <?php } ?></td>
         </tr>
-        <tr>
+        <!--<tr>
           <td><span class="required">*</span> <?php echo $entry_telephone; ?></td>
           <td><input type="text" name="telephone" value="<?php echo $telephone; ?>" />
             <?php if ($error_telephone) { ?>
             <span class="error"><?php echo $error_telephone; ?></span>
             <?php } ?></td>
-        </tr>
-        <tr>
+        </tr>-->
+        <!--<tr>
           <td><?php echo $entry_fax; ?></td>
           <td><input type="text" name="fax" value="<?php echo $fax; ?>" /></td>
-        </tr>
+        </tr>-->
       </table>
     </div>
     <div class="buttons">
