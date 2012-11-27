@@ -75,6 +75,16 @@ class ControllerCommonHome extends Controller {
 			
 			unlink($file);
 		}
+
+    $this->data['clear_cache'] = $this->url->link('common/home','token=' . $this->session->data['token'].'&clear_cache=true','SSL');
+    if(isset($this->request->get['clear_cache'])){
+      $iterator = new DirectoryIterator(DIR_CACHE);
+      foreach($iterator as $file){
+        if(!$file->isDot()){
+          unlink($file->getPathname());
+        }
+      }
+    }
 		
 		// Check cache directory is writable
 		$file = DIR_CACHE . 'test';
