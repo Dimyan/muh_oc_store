@@ -29,7 +29,7 @@ class ControllerProductCompare extends Controller {
 
 		$this->data['breadcrumbs'][] = array(
 			'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),			
+			'href'      => '', #$this->url->link('common/home'),
 			'separator' => false
 		);
 				
@@ -109,6 +109,15 @@ class ControllerProductCompare extends Controller {
 						$attribute_data[$attribute['attribute_id']] = $attribute['text'];
 					}
 				}
+
+        //long description start//
+        $cut_descr_symbols = 2000;
+        $descr_plaintext = strip_tags(html_entity_decode($product_info['description'],ENT_QUOTES, 'UTF-8'));
+        if( mb_strlen($descr_plaintext, 'UTF-8') > $cut_descr_symbols )
+        {
+          $descr_plaintext = mb_substr($descr_plaintext, 0, $cut_descr_symbols, 'UTF-8') . '&nbsp;&hellip;';
+        }
+        //long description end//
 															
 				$this->data['products'][$product_id] = array(
 					'product_id'   => $product_info['product_id'],
@@ -116,8 +125,9 @@ class ControllerProductCompare extends Controller {
 					'thumb'        => $image,
 					'price'        => $price,
 					'special'      => $special,
-					'description'  => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, 200) . '..',
-					'model'        => $product_info['model'],
+					#'description'  => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, 200) . '..',
+          'description' => $descr_plaintext, #  long description
+          'model'        => $product_info['model'],
 					'manufacturer' => $product_info['manufacturer'],
 					'availability' => $availability,
 					'rating'       => (int)$product_info['rating'],
