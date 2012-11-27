@@ -34,15 +34,6 @@ h1, .welcome {
 	font-weight: normal;
 	text-shadow: 0 0 1px rgba(0, 0, 0, .01);
 }
-h1-title {
-    color: #636E75;
-    font-family: Verdana;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-size: 25px;
-    font-weight: normal;
-    text-shadow: 0 0 1px rgba(0, 0, 0, .01);
-}
 h2 {
 	color: #000000;
 	font-size: 16px;
@@ -1842,6 +1833,53 @@ a.button:hover, input.button:hover {
 }
 .banner div img {
 	margin-bottom: 20px;
+}
+/* account */
+.account {
+    margin-bottom: 20px;
+}
+.account .account-heading {
+    -webkit-border-radius: 7px 7px 0px 0px;
+    -moz-border-radius: 7px 7px 0px 0px;
+    -khtml-border-radius: 7px 7px 0px 0px;
+    border-radius: 7px 7px 0px 0px;
+    border: 1px solid #DBDEE1;
+    background: url('../image/background.png') repeat-x;
+    padding: 8px 10px 7px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #333;
+    text-align: center;
+}
+.account .account-content {
+    background: #FFFFFF;
+    -webkit-border-radius: 0px 0px 7px 7px;
+    -moz-border-radius: 0px 0px 7px 7px;
+    -khtml-border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 7px 7px;
+    border-left: 1px solid #DBDEE1;
+    border-right: 1px solid #DBDEE1;
+    border-bottom: 1px solid #DBDEE1;
+    padding: 10px;
+}
+.account .account-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.account .account-content li {
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #0d6288;
+}
+.account .account-content a {
+    text-decoration: none;
+    color: #0d9cd8;
+}
+.account .account-content a:hover {
+    text-decoration: none;
+    color: #0d6288;
 }
 
 /* information */

@@ -18,29 +18,29 @@ class ControllerAccountAddress extends Controller {
 		$this->getList();
   	}
 
-  	public function insert() {
-    	if (!$this->customer->isLogged()) {
-	  		$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
+  public function insert() {
+    if (!$this->customer->isLogged()) {
+	    $this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
 
-	  		$this->redirect($this->url->link('account/login', '', 'SSL')); 
-    	} 
+	  	$this->redirect($this->url->link('account/login', '', 'SSL'));
+    }
 
-    	$this->language->load('account/address');
+    $this->language->load('account/address');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('account/address');
 			
-    	if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_account_address->addAddress($this->request->post);
+    if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+		  $this->model_account_address->addAddress($this->request->post);
 			
-      		$this->session->data['success'] = $this->language->get('text_insert');
+      $this->session->data['success'] = $this->language->get('text_insert');
 
-	  		$this->redirect($this->url->link('account/address', '', 'SSL'));
-    	} 
+	  	$this->redirect($this->url->link('account/address', '', 'SSL'));
+    }
 	  	
 		$this->getForm();
-  	}
+  }
 
   	public function update() {
     	if (!$this->customer->isLogged()) {
@@ -85,20 +85,20 @@ class ControllerAccountAddress extends Controller {
 		$this->getForm();
   	}
 
-  	public function delete() {
-    	if (!$this->customer->isLogged()) {
-	  		$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
+  public function delete() {
+    if (!$this->customer->isLogged()) {
+	  	$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
 
-	  		$this->redirect($this->url->link('account/login', '', 'SSL')); 
-    	} 
+	  	$this->redirect($this->url->link('account/login', '', 'SSL'));
+    }
 			
-    	$this->language->load('account/address');
+    $this->language->load('account/address');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('account/address');
 		
-    	if (isset($this->request->get['address_id']) && $this->validateDelete()) {
+    if (isset($this->request->get['address_id']) && $this->validateDelete()) {
 			$this->model_account_address->deleteAddress($this->request->get['address_id']);	
 			
 			// Default Shipping Address
@@ -123,7 +123,7 @@ class ControllerAccountAddress extends Controller {
 			$this->session->data['success'] = $this->language->get('text_delete');
 	  
 	  		$this->redirect($this->url->link('account/address', '', 'SSL'));
-    	}
+    }
 	
 		$this->getList();	
   	}
@@ -495,70 +495,49 @@ class ControllerAccountAddress extends Controller {
 		$this->response->setOutput($this->render());	
   	}
 	
-  	private function validateForm() {
-    	if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
-      		$this->error['firstname'] = $this->language->get('error_firstname');
-    	}
+  private function validateForm() {
+    if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 128)) {
+      $this->error['firstname'] = $this->language->get('error_firstname');
+    }
 
-    	if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
-      		$this->error['lastname'] = $this->language->get('error_lastname');
-    	}
+    if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 128)) {
+    	$this->error['lastname'] = $this->language->get('error_lastname');
+    }
 
-    	if ((utf8_strlen($this->request->post['address_1']) < 3) || (utf8_strlen($this->request->post['address_1']) > 128)) {
-      		$this->error['address_1'] = $this->language->get('error_address_1');
-    	}
+    if ((utf8_strlen($this->request->post['address_1']) < 3) || (utf8_strlen($this->request->post['address_1']) > 128)) {
+    	$this->error['address_1'] = $this->language->get('error_address_1');
+    }
 
-    	if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 128)) {
-      		$this->error['city'] = $this->language->get('error_city');
-    	}
-		
-		$this->load->model('localisation/country');
-		
-		$country_info = $this->model_localisation_country->getCountry($this->request->post['country_id']);
-		
-		if ($country_info) {
-			if ($country_info['postcode_required'] && (utf8_strlen($this->request->post['postcode']) < 2) || (utf8_strlen($this->request->post['postcode']) > 10)) {
-				$this->error['postcode'] = $this->language->get('error_postcode');
-			}
-			
-			// VAT Validation
-			$this->load->helper('vat');
-			
-			if ($this->config->get('config_vat') && $this->request->post['tax_id'] && (vat_validation($country_info['iso_code_2'], $this->request->post['tax_id']) != 'invalid')) {
-				$this->error['tax_id'] = $this->language->get('error_vat');
-			}		
-		}
-		
-    	if ($this->request->post['country_id'] == '') {
-      		$this->error['country'] = $this->language->get('error_country');
-    	}
-		
-    	if ($this->request->post['zone_id'] == '') {
-      		$this->error['zone'] = $this->language->get('error_zone');
-    	}
-		
-    	if (!$this->error) {
+    if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 128)) {
+    	$this->error['city'] = $this->language->get('error_city');
+    }
+
+    if (utf8_strlen($this->request->post['postcode']) != 6) {
+      $this->error['postcode'] = $this->language->get('error_postcode');
+    }
+
+    if (!$this->error) {
       		return true;
 		} else {
       		return false;
-    	}
-  	}
+    }
+  }
 
-  	private function validateDelete() {
-    	if ($this->model_account_address->getTotalAddresses()) {
-      		$this->error['warning'] = $this->language->get('error_delete');
-    	}
+  private function validateDelete() {
+  	if ($this->model_account_address->getTotalAddresses() < 1) {
+   		$this->error['warning'] = $this->language->get('error_delete');
+   	}
 
-    	if ($this->customer->getAddressId() == $this->request->get['address_id']) {
-      		$this->error['warning'] = $this->language->get('error_default');
-    	}
+   	if ($this->customer->getAddressId() == $this->request->get['address_id']) {
+   		$this->error['warning'] = $this->language->get('error_default');
+   	}
 
-    	if (!$this->error) {
-      		return true;
-    	} else {
-      		return false;
-    	}
-  	}
+   	if (!$this->error) {
+   		return true;
+   	} else {
+   		return false;
+   	}
+  }
 	
 	public function country() {
 		$json = array();
