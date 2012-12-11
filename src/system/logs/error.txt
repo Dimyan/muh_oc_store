@@ -42,3 +42,63 @@
 2012-11-23 14:38:40 - PHP Notice:  Undefined variable: text_option_sku in /home/dimyan/project/muh_oc_store/src/admin/view/template/sale/order_info.tpl on line 307
 2012-11-23 14:38:40 - PHP Notice:  Undefined variable: text_option_model in /home/dimyan/project/muh_oc_store/src/admin/view/template/sale/order_info.tpl on line 306
 2012-11-23 14:38:40 - PHP Notice:  Undefined variable: text_option_sku in /home/dimyan/project/muh_oc_store/src/admin/view/template/sale/order_info.tpl on line 307
+2012-12-04 13:15:00 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 13:16:54 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:35:48 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:35:48 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 96
+2012-12-04 13:38:07 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:38:07 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 13:40:31 - PHP Notice:  Array to string conversion in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 94
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 98
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 98
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 98
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'category_id' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 97
+2012-12-04 13:40:31 - PHP Warning:  Illegal string offset 'name' in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 98
+2012-12-04 13:40:31 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 14:42:31 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 14:43:26 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 14:44:29 - PHP Notice:  Undefined offset: 1 in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 94
+2012-12-04 14:44:29 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 14:44:42 - PHP Notice:  Undefined offset: 1 in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 94
+2012-12-04 14:44:42 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 14:45:17 - PHP Notice:  Array to string conversion in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 9
+2012-12-04 14:45:17 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 15:40:16 - PHP Notice:  Array to string conversion in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 9
+2012-12-04 15:40:16 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 15:41:38 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 15:51:41 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 15:52:25 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-04 16:06:27 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-05 11:10:05 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-05 12:22:05 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-05 12:25:40 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 32
+2012-12-05 13:47:13 - PHP Notice:  Undefined variable: column_name in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 22
+2012-12-05 13:47:13 - PHP Notice:  Undefined variable: text_no_results in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 42
+2012-12-05 13:47:13 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 61
+2012-12-05 13:53:00 - PHP Notice:  Undefined variable: featured_product in /home/dimyan/project/muh_oc_store/src/admin/view/template/module/products_on_home_page.tpl on line 58
+2012-12-05 17:14:41 - PHP Notice:  Array to string conversion in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 89
+2012-12-05 17:14:41 - PHP Notice:  Array to string conversion in /home/dimyan/project/muh_oc_store/src/admin/controller/module/products_on_home_page.php on line 89
+2012-12-06 16:18:12 - PHP Warning:  explode() expects parameter 2 to be string, array given in /home/dimyan/project/muh_oc_store/src/catalog/controller/module/products_on_home_page.php on line 16
+2012-12-10 14:46:36 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '5' at line 1<br />Error No: 1064<br />5 in /home/dimyan/project/muh_oc_store/src/system/database/mysql.php on line 49
+2012-12-10 14:54:20 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '5' at line 1<br />Error No: 1064<br />5 in /home/dimyan/project/muh_oc_store/src/system/database/mysql.php on line 49
+2012-12-10 15:21:14 - PHP Notice:  Undefined index: name in /home/dimyan/project/muh_oc_store/src/catalog/controller/module/products_on_home_page.php on line 71
+2012-12-10 15:21:14 - PHP Notice:  Undefined index: name in /home/dimyan/project/muh_oc_store/src/catalog/controller/module/products_on_home_page.php on line 71
+2012-12-10 15:21:14 - PHP Notice:  Undefined index: name in /home/dimyan/project/muh_oc_store/src/catalog/controller/module/products_on_home_page.php on line 71
+2012-12-10 15:28:46 - PHP Notice:  Error: Column 'category_id' in where clause is ambiguous<br />Error No: 1052<br />SELECT * FROM `category` c inner join `category_description` cd on c.`category_id` = cd.`category_id` WHERE category_id = '60' in /home/dimyan/project/muh_oc_store/src/system/database/mysql.php on line 49

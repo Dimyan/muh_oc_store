@@ -71,19 +71,19 @@ class ControllerCatalogCategory extends Controller {
 	}
 
 	private function getList() {
-   		$this->data['breadcrumbs'] = array();
+   	$this->data['breadcrumbs'] = array();
 
-   		$this->data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('text_home'),
+   	$this->data['breadcrumbs'][] = array(
+      'text'      => $this->language->get('text_home'),
 			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
-      		'separator' => false
-   		);
+      'separator' => false
+   	);
 
-   		$this->data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('heading_title'),
+   	$this->data['breadcrumbs'][] = array(
+      'text'      => $this->language->get('heading_title'),
 			'href'      => $this->url->link('catalog/category', 'token=' . $this->session->data['token'] . '&path=', 'SSL'),
-      		'separator' => ' :: '
-   		);
+      'separator' => ' :: '
+   	);
 									
 		$this->data['insert'] = $this->url->link('catalog/category/insert', 'token=' . $this->session->data['token'], 'SSL');
 		$this->data['delete'] = $this->url->link('catalog/category/delete', 'token=' . $this->session->data['token'], 'SSL');

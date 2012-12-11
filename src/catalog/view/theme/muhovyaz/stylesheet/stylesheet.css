@@ -804,7 +804,7 @@ a.button:hover, input.button:hover {
 	width: 130px;
 	display: inline-block;
 	vertical-align: top;
-	margin-right: 20px;
+	margin-right: 18px;
 	margin-bottom: 20px;	
 }
 #column-left + #column-right + #content .box-product > div {
