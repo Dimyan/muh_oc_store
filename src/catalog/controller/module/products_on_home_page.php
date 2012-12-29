@@ -58,7 +58,7 @@ class ControllerModuleProductsOnHomePage extends Controller {
             'name'    	 => $product['name'],
             'price'   	 => $price,
             'special' 	 => $special,
-            'rating'     => $rating,
+            'rating'     => (int)$rating,
             'reviews'    => sprintf($this->language->get('text_reviews'), (int)$product['reviews']),
             'href'    	 => $this->url->link('product/product', 'product_id=' . $product['product_id']),
           );

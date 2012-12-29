@@ -886,6 +886,7 @@ a.button:hover, input.button:hover {
 .box-product .rating {
     display: block;
     margin-bottom: 4px;
+    text-align:center;
 }
 .box-product .cart {
     text-align: center;
