@@ -684,3 +684,27 @@
 2012-12-14 16:02:49 - PHP Notice:  Undefined index: add in /home/dimyan/project/muh_oc_store/src/catalog/view/theme/muhovyaz/template/module/products_slider_home.tpl on line 40
 2012-12-14 16:02:49 - PHP Notice:  Undefined index: add in /home/dimyan/project/muh_oc_store/src/catalog/view/theme/muhovyaz/template/module/products_slider_home.tpl on line 40
 2012-12-14 16:02:49 - PHP Notice:  Undefined index: add in /home/dimyan/project/muh_oc_store/src/catalog/view/theme/muhovyaz/template/module/products_slider_home.tpl on line 40
+2013-02-13 16:05:31 - PHP Warning:  sprintf(): Too few arguments in /home/dimyan/project/muh_oc_store/src/catalog/controller/account/success.php on line 35
+2013-02-13 16:10:12 - PHP Warning:  sprintf(): Too few arguments in /home/dimyan/project/muh_oc_store/src/catalog/controller/account/success.php on line 35
+2013-03-12 14:48:08 - PHP Warning:  imagejpeg(): Unable to open '/var/www/muh_oc_store/src/image/cache/data/wet-fly/March-Brown-Beige-500x500.jpg' for writing: Permission denied in /home/dimyan/project/muh_oc_store/src/system/library/image.php on line 45
+2013-03-12 14:48:08 - PHP Warning:  imagejpeg(): Unable to open '/var/www/muh_oc_store/src/image/cache/data/wet-fly/March-Brown-Beige-228x228.jpg' for writing: Permission denied in /home/dimyan/project/muh_oc_store/src/system/library/image.php on line 45
+2013-03-12 15:11:43 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:11:43 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:11:43 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:11:43 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:12:32 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:12:32 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:12:32 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:12:32 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:12:42 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:12:42 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:12:42 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:12:42 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:13:02 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:13:02 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:13:02 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:13:02 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:16:58 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:16:58 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
+2013-03-12 15:16:58 - PHP Notice:  Undefined index: model in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 21
+2013-03-12 15:16:58 - PHP Notice:  Undefined index: sku in /home/dimyan/project/muh_oc_store/src/catalog/model/checkout/order.php on line 22
