@@ -6,7 +6,7 @@
       <?php foreach ($informations as $information) { ?>
       <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
       <?php } ?>
-      <li><a href='http://muhovyaz.ru/index.php?route=product/testimonial' alt='Отзывы'>Отзывы</a></li>
+      <li><a href='http://muhovyaz.ru/testimonial' alt='Отзывы'>Отзывы</a></li>
     </ul>
   </div>
   <?php } ?>
